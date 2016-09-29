@@ -18,8 +18,8 @@ public class popupController
 		{
 			display.displayMessage("Hi there");
 			
-			answer = display.collectResponse("ya like memes?");
-			display.displayMessage(answer + "that's what you said");
+			answer = display.collectResponse("ya like memes? ");
+			display.displayMessage(answer + " that's what you said");
 			
 		
 		
@@ -45,6 +45,29 @@ public class popupController
 		}
 		
 		return isParseable;
+	}
+	
+	/*
+	 * Checks that the supplied string is parseable to an tinteger calue.
+	 * @param potentialNumber The string to test for parsing.
+	 * @return Whether it could be parsed as an integer.
+	 */
+	private boolean isInteger(String potentialNumber)
+	{
+		boolean isParseable = false;
 		
+		try
+		{
+			int test = Integer.parseInt(potentialNumber);
+			isParseable = true;
+		}
+		catch(NumberFormatException notInt)
+		{
+			display.displayMessage(notInt.getMessage());
+			display.displayMessage("Type in an integer next time!");
+		}
+		
+		
+		return isParseable;
 	}
 }
