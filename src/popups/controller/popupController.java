@@ -1,30 +1,37 @@
 package popups.controller;
 
 import popups.view.popupViewer;
+import popups.model.Thingy;
+
+import java.util.List;
+import java.util.ArrayList;
 
 public class popupController
 {
 	private popupViewer display;
+	private List<Thingy> thingyList;
 	
 	public popupController()
 	{
 		display = new popupViewer();
+		thingyList = new ArrayList<Thingy>();
 		
 	}
 	public void start()
 	{
-		String answer = "sample";
-		while(answer != null && !answer.equals(""))
-		{
-			display.displayMessage("Hi there");
-			
-			answer = display.collectResponse("ya like memes? ");
-			display.displayMessage(answer + " that's what you said");
-			
+		learnList();
 		
-		
-		}
 	}
+	private void testLoop() {
+	String answer = "sample";
+	while(answer != null && !isDouble(answer))
+	{
+		
+		answer = display.collectResponse("You need to type in a number ");
+	}
+	}
+	
+	
 	/**
 	 * Checks if the supplied String can be parsed to a double value.
 	 * @param potentialValue The string to test.
@@ -48,7 +55,7 @@ public class popupController
 	}
 	
 	/*
-	 * Checks that the supplied string is parseable to an tinteger calue.
+	 * Checks that the supplied string is parseable to an integer value.
 	 * @param potentialNumber The string to test for parsing.
 	 * @return Whether it could be parsed as an integer.
 	 */
@@ -70,4 +77,10 @@ public class popupController
 		
 		return isParseable;
 	}
+	private void learnLists(){
+		display.displayMessage(thingyList.size() + " is the size of the list.");
+		Thingy testThingy = new Thingy();
+		thingyList.
+	}
 }
+
