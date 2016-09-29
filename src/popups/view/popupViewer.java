@@ -2,6 +2,11 @@ package popups.view;
 
 import javax.swing.JOptionPane;
 
+/**
+ * Popup Viewer class
+ * @author Hatchell.Kadin
+ * @version 9/27/2016
+ */
 public class popupViewer
 {
 	/**
@@ -23,6 +28,14 @@ public class popupViewer
 		
 		response = JOptionPane.showInputDialog(null, question);
 		
+		return response;
+	}
+	public int collectUserOption(String question)
+	{
+		int response = 0;
+		
+		response = JOptionPane.showConfirmDialog(null, question);
+		 
 		return response;
 	}
 
